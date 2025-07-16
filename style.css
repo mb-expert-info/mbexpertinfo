@@ -1,0 +1,204 @@
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.hero {
+  background: radial-gradient(circle at center,
+    #7E57C2 0%,      /* violet */
+    #8E24AA 30%,     /* violet moyen plus saturé */
+    #BA68C8 60%,     /* fuchsia */
+    #1E1E2F 100%);   /* bleu nuit terminal */
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  background-size: 250% 250%;
+  background-position: center;
+  animation: animate-gradient 12s ease-in-out infinite;
+  overflow-x: hidden;
+}
+
+@keyframes animate-gradient {
+  0%   { background-position: 50% 50%; }
+  50%  { background-position: 60% 40%; }
+  100% { background-position: 50% 50%; }
+}
+
+.hero-content {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  transform: scale(1.03);
+  transition: all 0.3s ease;
+}
+
+.hero h1, .hero p {
+  text-shadow: 0 0 12px rgba(186, 104, 200, 0.4);
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.2s ease-in-out;
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    color: #777;
+}
+
+.presentation {
+  background: linear-gradient(180deg, #e1f0ff, #ede7f6 );
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.presentation h2 {
+  font-size: 2.2em;
+  color: #7E57C2; /* violet principal */
+  margin-bottom: 20px;
+}
+
+.presentation p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #444;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.service {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+.service i {
+  font-size: 2.5em;
+  color: #7E57C2;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.service h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.service p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.5;
+}
+
+.projects {
+  background: linear-gradient(180deg, #ede7f6, #e1f0ff);
+
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.4em;
+  color: #7E57C2;
+  margin-bottom: 50px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+
+.project-logo {
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin: 20px auto 10px;
+}
+
+
+.project-card {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(126, 87, 194, 0.2); /* violet pastel clair */
+  border-radius: 0 0 16px 16px; /* arrondir uniquement en bas */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.project-card:hover::before {
+  opacity: 0; /* 1 pour le rendre visible */
+}
+
+.project-card h3 {
+  font-size: 1.3em;
+  margin: 20px 15px 10px;
+  color: #333;
+}
+
+.project-card p {
+  font-size: 1em;
+  margin: 0 15px 20px;
+  color: #666;
+}
+
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* pour que le lien prenne toute la carte */
+  transition: transform 0.3s ease;
+}
